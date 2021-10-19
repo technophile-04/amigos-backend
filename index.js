@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const userRoute = require('./routes/user.js');
+const authRoute = require('./routes/auth');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 app.use('/api/users', userRoute);
+app.use('/api/auth', authRoute);
 
 app.get('/', (req, res) => {
 	res.send('Hello world!');
