@@ -7,6 +7,7 @@ const authRoute = require('./routes/auth');
 const productRoute = require('./routes/product');
 const cartRoute = require('./routes/cart');
 const orderRoute = require('./routes/order');
+const cors = require('cors');
 
 const app = express();
 
@@ -17,6 +18,7 @@ mongoose
 	.then(() => console.log('Connected Backend to DB'))
 	.catch((error) => console.log(error));
 
+app.use(cors());
 app.use(morgan('short'));
 app.use(express.urlencoded());
 app.use(express.json());
