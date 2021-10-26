@@ -4,7 +4,7 @@ const Product = require('../models/Product');
 
 const router = express.Router();
 
-// Create Post
+// Create Product
 router.post('/', verifyTokeAndAdmin, async (req, res) => {
 	const newProduct = new Product(req.body);
 

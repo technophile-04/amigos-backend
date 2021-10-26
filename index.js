@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const userRoute = require('./routes/user.js');
 const authRoute = require('./routes/auth');
 const productRoute = require('./routes/product');
+const cartRoute = require('./routes/cart');
+const orderRoute = require('./routes/order');
 
 const app = express();
 
@@ -22,6 +24,8 @@ app.use(express.json());
 app.use('/api/users', userRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/products', productRoute);
+app.use('/api/orders', orderRoute);
+app.use('/api/cart', cartRoute);
 
 app.get('/', (req, res) => {
 	res.send('Hello world!');
